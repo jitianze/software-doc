@@ -4,31 +4,36 @@
 
 官网下载安装程序，我下载的是vagrant_1.9.5
 
-windows：
+• windows：
 [msi下载地址](https://releases.hashicorp.com/vagrant/1.9.5/vagrant_1.9.5.msi?_ga=2.147953008.697792310.1496625451-64033646.1495087346)
 
 
-debian：
+windows下傻瓜式安装，安装完成重启，重启在命令行输入 vagrant -v 查看版本信息，没报错及为安装成功
+
+• debian：
 [deb下载地址](https://releases.hashicorp.com/vagrant/1.9.5/vagrant_1.9.5_x86_64.deb?_ga=2.51607150.697792310.1496625451-64033646.1495087346)
 
-centos：
+在含有deb文件夹进入终端输入dpkg -i vagrant_1.9.5_x86_64.deb
+
+
+• centos：
 [rpm下载地址](https://releases.hashicorp.com/vagrant/1.9.5/vagrant_1.9.5_x86_64.rpm?_ga=2.85095134.697792310.1496625451-64033646.1495087346)
 
-mac：
-本人屌丝，买不起，break
+在含有rpm文件夹进入终端输入rpm -ivh vagrant_1.9.5_x86_64.rpm
 
-windows下傻瓜式安装
-
-
+• mac：
+本人屌丝，买不起. break 
 
 
-
-
-
+##  2.常用命令介绍 
 
 vagrant配置与操作：
 
 vagrant box add //添加box的操作
+
+
+
+
 
 vagrant init 初始化box的操作
 
@@ -58,7 +63,7 @@ vagrant suspend //挂起当前的虚拟机
 
 vagrant resume //恢复前面被挂起的状态
 
-Vagrantfile配置文件详解
+## 3.Vagrantfile配置文件详解
 
 在我们的开发目录下有一个文件Vagrantfile，里面包含有大量的配置信息，主要包括三个方面的配置，虚拟机的配置、SSH配置、Vagrant的一些基础配置。Vagrant是使用Ruby开发的，所以它的配置语法也是Ruby的，但是我们没有学过Ruby的人还是可以跟着它的注释知道怎么配置一些基本项的配置。
 
