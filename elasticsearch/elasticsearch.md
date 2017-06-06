@@ -65,17 +65,29 @@ kill -15 pid
 
 `shell
 cluster.name: elasticsearch       #集群名称
+
 node.name: es-node-01            #节点名称
+
 path.data: /usr/local/elasticsearch-2.4.5/data   #数据文件存储路径
+
 path.logs: /usr/local/elasticsearch-2.4.5/logs    #log文件存储路径
+
 network.host: 192.168.1.102                           #默认网络连接地址
+
 http.port: 9200                                                #连接端口
+
 discovery.zen.minimum_master_nodes: 2     #这个参数来保证集群中的节点可以知道其它N个有master资格的节点。默认为1，对于大的集群来说，可以设置大一点的值（2-4）
+
 discovery.zen.ping.multicast.enabled: false   #禁用多播 
+
 discovery.zen.ping.unicast.hosts: ["192.168.1.102", "192.168.1.103", "192.168.1.104"]   #集群中master节点的初始列表，可以通过这些节点来自动发现新加入集群的节点。
+
 discovery.zen.ping_timeout: 120s     #存活超时时间
+
 bootstrap.system_call_filter: false    # 因centos6不支持SecComp而默认bootstrap.system_call_filter为true进行检测，所以，要设置为 false。注：SecComp为secure computing mode简写
+
 http.cors.enabled: true  #是否支持跨域，默认为false
+
 http.cors.allow-origin: "*"   #当设置允许跨域，默认为*,表示支持所有域名
 `
 
