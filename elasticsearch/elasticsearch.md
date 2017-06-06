@@ -98,7 +98,7 @@ http.cors.allow-origin: "*"   #当设置允许跨域，默认为*,表示支持�
 
 
 elasticsearch.yml全文解释
-`
+`xml
 ##################### Elasticsearch Configuration Example ##################### 
 # 只是挑些重要的配置选项进行注释,其实自带的已经有非常细致的英文注释了.有理解偏差的地方请以官方原版解释为准. 
 
