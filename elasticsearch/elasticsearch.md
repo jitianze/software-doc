@@ -28,34 +28,29 @@ And now we are ready to start our node and single cluster (Windows users should 
 
 
 4、启动、关闭：
-`
-/usr/local/elasticsearch-5.4.0/bin/elasticsearch ---前台启动
-/usr/local/elasticsearch-5.4.0/bin/elasticsearch -d ---后台启动
-#查看启动进程：jps | grep Elasticsearch
+
+`shell
+/usr/local/elasticsearch-5.4.0/bin/elasticsearch #前台启动
+
+/usr/local/elasticsearch-5.4.0/bin/elasticsearch -d #后台启动
+
+#查看启动进程：
+
+jps | grep Elasticsearch
+
 #关闭：
+
 kill -15 pid
 `
-此时应该在终端得到如下内容：
+
+此时应该在终端得到如下内容（中间有省略）：
 
 `
 [2016-09-16T14:17:51,251][INFO ][o.e.n.Node               ] [] initializing ...
 [2016-09-16T14:17:51,329][INFO ][o.e.e.NodeEnvironment    ] [6-bjhwl] using [1] data paths, mounts [[/ (/dev/sda1)]], net usable_space [317.7gb], net total_space [453.6gb], spins? [no], types [ext4]
 [2016-09-16T14:17:51,330][INFO ][o.e.e.NodeEnvironment    ] [6-bjhwl] heap size [1.9gb], compressed ordinary object pointers [true]
-[2016-09-16T14:17:51,333][INFO ][o.e.n.Node               ] [6-bjhwl] node name [6-bjhwl] derived from node ID; set [node.name] to override
-[2016-09-16T14:17:51,334][INFO ][o.e.n.Node               ] [6-bjhwl] version[5.4.1], pid[21261], build[f5daa16/2016-09-16T09:12:24.346Z], OS[Linux/4.4.0-36-generic/amd64], JVM[Oracle Corporation/Java HotSpot(TM) 64-Bit Server VM/1.8.0_60/25.60-b23]
-[2016-09-16T14:17:51,967][INFO ][o.e.p.PluginsService     ] [6-bjhwl] loaded module [aggs-matrix-stats]
-[2016-09-16T14:17:51,967][INFO ][o.e.p.PluginsService     ] [6-bjhwl] loaded module [ingest-common]
-[2016-09-16T14:17:51,967][INFO ][o.e.p.PluginsService     ] [6-bjhwl] loaded module [lang-expression]
-[2016-09-16T14:17:51,967][INFO ][o.e.p.PluginsService     ] [6-bjhwl] loaded module [lang-groovy]
-[2016-09-16T14:17:51,967][INFO ][o.e.p.PluginsService     ] [6-bjhwl] loaded module [lang-mustache]
-[2016-09-16T14:17:51,967][INFO ][o.e.p.PluginsService     ] [6-bjhwl] loaded module [lang-painless]
-[2016-09-16T14:17:51,967][INFO ][o.e.p.PluginsService     ] [6-bjhwl] loaded module [percolator]
-[2016-09-16T14:17:51,968][INFO ][o.e.p.PluginsService     ] [6-bjhwl] loaded module [reindex]
-[2016-09-16T14:17:51,968][INFO ][o.e.p.PluginsService     ] [6-bjhwl] loaded module [transport-netty3]
-[2016-09-16T14:17:51,968][INFO ][o.e.p.PluginsService     ] [6-bjhwl] loaded module [transport-netty4]
-[2016-09-16T14:17:51,968][INFO ][o.e.p.PluginsService     ] [6-bjhwl] loaded plugin [mapper-murmur3]
-[2016-09-16T14:17:53,521][INFO ][o.e.n.Node               ] [6-bjhwl] initialized
-[2016-09-16T14:17:53,521][INFO ][o.e.n.Node               ] [6-bjhwl] starting ...
+[2016-09-16T14:17:51,333][INFO ][o.e.n.Node               ] [6-bjhwl] node name [6-bjhwl] derived from node ID; set [node.name] to
+
 [2016-09-16T14:17:53,671][INFO ][o.e.t.TransportService   ] [6-bjhwl] publish_address {192.168.8.112:9300}, bound_addresses {{192.168.8.112:9300}
 [2016-09-16T14:17:53,676][WARN ][o.e.b.BootstrapCheck     ] [6-bjhwl] max virtual memory areas vm.max_map_count [65530] likely too low, increase to at least [262144]
 [2016-09-16T14:17:56,731][INFO ][o.e.h.HttpServer         ] [6-bjhwl] publish_address {192.168.8.112:9200}, bound_addresses {[::1]:9200}, {192.168.8.112:9200}
@@ -68,7 +63,7 @@ kill -15 pid
 ./elasticsearch -Ecluster.name=my_cluster_name -Enode.name=my_node_name
 
 
-`
+`shell
 cluster.name: elasticsearch       #集群名称
 node.name: es-node-01            #节点名称
 path.data: /usr/local/elasticsearch-2.4.5/data   #数据文件存储路径
@@ -102,7 +97,7 @@ http.cors.allow-origin: "*"   #当设置允许跨域，默认为*,表示支持�
 
 
 
-
+elasticsearch.yml全文解释
 `
 ##################### Elasticsearch Configuration Example ##################### 
 # 只是挑些重要的配置选项进行注释,其实自带的已经有非常细致的英文注释了.有理解偏差的地方请以官方原版解释为准. 
@@ -350,3 +345,24 @@ curl 'http://localhost:9200/?pretty'
 }
 
 这说明你的ELasticsearch集群已经启动并且正常运行，接下来我们可以开始各种实验了。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
