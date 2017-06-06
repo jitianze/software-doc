@@ -98,7 +98,8 @@ http.cors.allow-origin: "*"   #当设置允许跨域，默认为*,表示支持�
 
 
 elasticsearch.yml全文解释
-`xml
+
+`shell
 ##################### Elasticsearch Configuration Example ##################### 
 # 只是挑些重要的配置选项进行注释,其实自带的已经有非常细致的英文注释了.有理解偏差的地方请以官方原版解释为准. 
 
@@ -318,7 +319,7 @@ elasticsearch.yml全文解释
 #index.gateway.local.sync:多少时间进行一次的写磁盘操作,默认是5s 
 
 # 以上的translog配置都可以通过API进行动态的设置 - See more at: http://bigbo.github.io/pages/2015/04/10/elasticsearch_config/#sthash.AvOSUcQ4.dpuf
-
+`
 
 
 
