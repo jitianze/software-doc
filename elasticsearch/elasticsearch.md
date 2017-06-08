@@ -29,17 +29,20 @@ And now we are ready to start our node and single cluster (Windows users should 
 
  启动、关闭：
 
-`shell
+`
 /usr/local/elasticsearch-5.4.0/bin/elasticsearch #前台启动
 
 /usr/local/elasticsearch-5.4.0/bin/elasticsearch -d #后台启动
+`
+查看启动进程：
 
-#查看启动进程：
-
+`
 jps | grep Elasticsearch
+`
 
-#关闭：
+关闭：
 
+`
 kill -15 pid
 `
 
@@ -86,10 +89,13 @@ http.cors.allow-origin: "*"   #当设置允许跨域，默认为*,表示支持�
 
 打开另一个终端进行测试：
 
+`
 curl 'http://localhost:9200/?pretty'
+`
 
 你能看到以下返回信息：
 
+`
 {
    "status": 200,
    "name": "Shrunken Bones",
@@ -99,6 +105,7 @@ curl 'http://localhost:9200/?pretty'
    },
    "tagline": "You Know, for Search"
 }
+`
 
 这说明你的ELasticsearch集群已经启动并且正常运行，接下来我们可以开始各种实验了。
 
