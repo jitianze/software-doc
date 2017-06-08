@@ -27,7 +27,7 @@ cd elasticsearch-5.4.1/bin
 And now we are ready to start our node and single cluster (Windows users should run the elasticsearch.bat file):
 
 
-4、启动、关闭：
+ 启动、关闭：
 
 `shell
 /usr/local/elasticsearch-5.4.0/bin/elasticsearch #前台启动
@@ -43,22 +43,8 @@ jps | grep Elasticsearch
 kill -15 pid
 `
 
-此时应该在终端得到如下内容（中间有省略）：
 
-`
-[2016-09-16T14:17:51,251][INFO ][o.e.n.Node               ] [] initializing ...
-[2016-09-16T14:17:51,329][INFO ][o.e.e.NodeEnvironment    ] [6-bjhwl] using [1] data paths, mounts [[/ (/dev/sda1)]], net usable_space [317.7gb], net total_space [453.6gb], spins? [no], types [ext4]
-[2016-09-16T14:17:51,330][INFO ][o.e.e.NodeEnvironment    ] [6-bjhwl] heap size [1.9gb], compressed ordinary object pointers [true]
-[2016-09-16T14:17:51,333][INFO ][o.e.n.Node               ] [6-bjhwl] node name [6-bjhwl] derived from node ID; set [node.name] to
-
-[2016-09-16T14:17:53,671][INFO ][o.e.t.TransportService   ] [6-bjhwl] publish_address {192.168.8.112:9300}, bound_addresses {{192.168.8.112:9300}
-[2016-09-16T14:17:53,676][WARN ][o.e.b.BootstrapCheck     ] [6-bjhwl] max virtual memory areas vm.max_map_count [65530] likely too low, increase to at least [262144]
-[2016-09-16T14:17:56,731][INFO ][o.e.h.HttpServer         ] [6-bjhwl] publish_address {192.168.8.112:9200}, bound_addresses {[::1]:9200}, {192.168.8.112:9200}
-[2016-09-16T14:17:56,732][INFO ][o.e.g.GatewayService     ] [6-bjhwl] recovered [0] indices into cluster_state
-[2016-09-16T14:17:56,748][INFO ][o.e.n.Node               ] [6-bjhwl] started
-`
-6-bjhwl  就时所谓的节点名，可以通过以下命令修改：
-
+修改集群和节点名称，也可以到配置文件中修改
 
 ./elasticsearch -Ecluster.name=my_cluster_name -Enode.name=my_node_name
 
@@ -116,12 +102,26 @@ curl 'http://localhost:9200/?pretty'
 
 这说明你的ELasticsearch集群已经启动并且正常运行，接下来我们可以开始各种实验了。
 
+安装插件
+
+(1) git clone git://github.com/mobz/elasticsearch-head.git
+
+(2) cd elasticsearch-head 
+
+(3) npm install //一定要在elasticsearch-head目录下执行该命令（需要安装nodejs）
+
+(4) 修改elasticsearch-head下Gruntfile.js文件，默认监听在127.0.0.1下9200端口，改为9100
+
+(5) 启动服务
+
+cd elasticsearch-head/node_modules/grunt/bin/
+
+./grunt server
 
 
+或者进入elasticsearch-head目录后，配置完Gruntfile.js 直接 npm run start 即可
 
-
-
-
+浏览器访问 http://localhost:9100/  (localhost换成插件所在的机器的ip)
 
 
 
