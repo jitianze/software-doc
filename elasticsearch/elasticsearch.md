@@ -32,7 +32,8 @@ And now we are ready to start our node and single cluster (Windows users should 
 后台启动加上 -d 参数
 `
 /usr/local/elasticsearch-5.4.0/bin/elasticsearch 
-
+`
+`
 /usr/local/elasticsearch-5.4.0/bin/elasticsearch -d 
 `
 查看启动进程：
@@ -53,7 +54,7 @@ kill -15 pid
 ./elasticsearch -Ecluster.name=my_cluster_name -Enode.name=my_node_name
 
 
-`shell
+``` shell
 cluster.name: elasticsearch       #集群名称
 
 node.name: es-node-01            #节点名称
@@ -79,7 +80,7 @@ bootstrap.system_call_filter: false    # 因centos6不支持SecComp而默认boot
 http.cors.enabled: true  #是否支持跨域，默认为false
 
 http.cors.allow-origin: "*"   #当设置允许跨域，默认为*,表示支持所有域名
-`
+```
 
 
 启动后，如果只有本地可以访问，尝试修改配置文件 elasticsearch.yml
@@ -123,7 +124,9 @@ curl 'http://localhost:9200/?pretty'
 (5) 启动服务
 
 `
- cd elasticsearch-head/node_modules/grunt/bin/
+cd elasticsearch-head/node_modules/grunt/bin/
+`
+`
  ./grunt server
 `
 
