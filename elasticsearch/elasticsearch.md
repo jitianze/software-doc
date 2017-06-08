@@ -28,11 +28,12 @@ And now we are ready to start our node and single cluster (Windows users should 
 
 
  启动、关闭：
-
+ 
+后台启动加上 -d 参数
 `
-/usr/local/elasticsearch-5.4.0/bin/elasticsearch #前台启动
+/usr/local/elasticsearch-5.4.0/bin/elasticsearch 
 
-/usr/local/elasticsearch-5.4.0/bin/elasticsearch -d #后台启动
+/usr/local/elasticsearch-5.4.0/bin/elasticsearch -d 
 `
 查看启动进程：
 
@@ -120,11 +121,11 @@ curl 'http://localhost:9200/?pretty'
 (4) 修改elasticsearch-head下Gruntfile.js文件，默认监听在127.0.0.1下9200端口，改为9100
 
 (5) 启动服务
+`
+ cd elasticsearch-head/node_modules/grunt/bin/
 
-cd elasticsearch-head/node_modules/grunt/bin/
-
-./grunt server
-
+ ./grunt server
+`
 
 或者进入elasticsearch-head目录后，配置完Gruntfile.js 直接 npm run start 即可
 
