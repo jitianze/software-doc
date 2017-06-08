@@ -121,9 +121,9 @@ curl 'http://localhost:9200/?pretty'
 (4) 修改elasticsearch-head下Gruntfile.js文件，默认监听在127.0.0.1下9200端口，改为9100
 
 (5) 启动服务
+
 `
  cd elasticsearch-head/node_modules/grunt/bin/
-
  ./grunt server
 `
 
