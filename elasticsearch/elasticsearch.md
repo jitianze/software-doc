@@ -126,6 +126,7 @@ curl 'http://localhost:9200/?pretty'
 `
 cd elasticsearch-head/node_modules/grunt/bin/
 `
+
 `
  ./grunt server
 `
