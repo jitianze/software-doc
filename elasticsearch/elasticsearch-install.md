@@ -168,6 +168,8 @@ source /etc/profile
 ```
 现在可登录[http://localhost:5601](http://localhost:5601) 进行查看是否成功
 
+登录界面如下：
+
 ![kibana](https://github.com/jitianze/software-doc/blob/master/picture/kibana.png)
 
 
